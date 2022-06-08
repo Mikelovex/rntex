@@ -22,7 +22,6 @@ $ npm install
 $ docker-compose up -d
 ```
 
-
 ### Migrations
 ```
 $ yarn typeorm migration:run
