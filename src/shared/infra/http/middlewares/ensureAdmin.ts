@@ -14,7 +14,6 @@ export async function ensureAdmin(
     const user = await userRepository.findById(id);
 
     if (user.isAdmin === false) {
-        console.log('clcasd');
         throw new AppError("User isn't admin");
     }
 

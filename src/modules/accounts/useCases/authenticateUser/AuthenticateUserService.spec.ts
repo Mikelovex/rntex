@@ -23,7 +23,7 @@ describe('Authenticate User', () => {
             password: '1234',
             name: 'User test',
         };
-        await createUserService.executa(user);
+        await createUserService.execute(user);
 
         const result = await authenticateUserService.execute({
             email: user.email,
@@ -51,7 +51,7 @@ describe('Authenticate User', () => {
                 name: 'User test error',
             };
 
-            await createUserService.executa(user);
+            await createUserService.execute(user);
 
             await authenticateUserService.execute({
                 email: user.email,

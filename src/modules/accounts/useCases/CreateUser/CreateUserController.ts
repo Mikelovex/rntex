@@ -9,7 +9,7 @@ class CreateUserController {
 
         const createUserService = container.resolve(CreateUserService);
 
-        await createUserService.executa({
+        await createUserService.execute({
             name,
             email,
             password,

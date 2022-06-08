@@ -19,8 +19,8 @@ const importCategoryController = new ImportCategoryController();
 
 categoriesRoutes.post(
     '/',
-    ensureAuthenticated,
-    ensureAdmin,
+    // ensureAuthenticated,
+    // ensureAdmin,
     createCategoryController.handle,
 );
 
@@ -29,7 +29,6 @@ categoriesRoutes.get('/', listCategoriesController.handle);
 categoriesRoutes.post(
     '/import',
     ensureAuthenticated,
-    ensureAdmin,
     upload.single('file'),
     importCategoryController.handle,
 );

@@ -1,14 +1,21 @@
+import { inject, injectable } from 'tsyringe';
 import { Car } from '../../infra/typeorm/entities/Car';
 import { ICarsRepository } from '../../repositories/ICarsRepository';
 
 interface IRequest {
-    category_id: string;
-    brand: string;
-    name: string;
+    category_id?: string;
+    brand?: string;
+    name?: string;
 }
 
+
+
+@injectable()
 class ListCarsService {
-    constructor(private carsRepository: ICarsRepository) {}
+    constructor(
+        @inject("CarsRepository")
+        private carsRepository: ICarsRepository
+    ) { }
     async execute({ name, brand, category_id }: IRequest): Promise<Car[]> {
         const cars = await this.carsRepository.findAvailable(
             brand,

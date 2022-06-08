@@ -10,9 +10,9 @@ class CreateUserService {
     constructor(
         @inject('UsersRepository')
         private usersRepository: IUsersRepository,
-    ) {}
+    ) { }
 
-    async executa({
+    async execute({
         name,
         email,
         password,
